@@ -45,8 +45,8 @@ export function DateField({ label, value, onChange, error }: DateFieldProps) {
       DateTimePickerAndroid.open({
         value: toDate(value),
         mode: 'date',
-        onChange: (_event, selected) => {
-          if (selected) onChange(formatIso(selected));
+        onValueChange: (_event, selected) => {
+          onChange(formatIso(selected));
         },
       });
     } else {
@@ -69,10 +69,11 @@ export function DateField({ label, value, onChange, error }: DateFieldProps) {
           value={toDate(value)}
           mode="date"
           display="inline"
-          onChange={(_event, selected) => {
+          onValueChange={(_event, selected) => {
             setShowIosPicker(false);
-            if (selected) onChange(formatIso(selected));
+            onChange(formatIso(selected));
           }}
+          onDismiss={() => setShowIosPicker(false)}
         />
       )}
       {error ? <Text className="text-sm text-red-600">{error}</Text> : null}
