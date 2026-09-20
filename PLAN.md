@@ -1,6 +1,6 @@
-# Car Buddy — MVP Plan (Phase 1)
+# Car Buddy — MVP Plan
 
-Status: **awaiting go-ahead** — nothing scaffolded yet, per your instructions. This doc is architecture + data model + milestones only.
+Status: **Phase 1 complete and verified running on Android** (see §8). Phase 2 (real OBD-II hardware) is planned in §9, awaiting go-ahead.
 
 ## 1. Confirmed stack
 
@@ -150,6 +150,39 @@ Deferred (explicitly not built now, but not precluded): real BLE/ELM327 adapter,
 - No CI/CD setup this session (can add GitHub Actions later on request).
 - No app icon/branding assets yet — placeholder Expo defaults.
 
-## 8. Next step
+## 8. Phase 1 status: done
 
-Say **go** to start scaffolding at Milestone 1, or tell me to adjust anything above first (intervals, folder layout, Expo Router vs React Navigation, scope).
+All 7 milestones shipped, tested (16 passing unit tests), and verified running live on an Android emulator (Garage CRUD, mileage, service reminders with default-interval seeding, service history, and the mock-diagnostics DTC explanation UI all confirmed working end-to-end, not just compiled). See [README.md](./README.md) for what's implemented and the scope decisions made along the way.
+
+## 9. Phase 2 plan: real OBD-II hardware
+
+**Goal:** replace `MockObdAdapter` with a real `ElmObdAdapter` that talks to a Bluetooth LE ELM327 dongle. No screen should need to change — that's the entire reason the `ObdAdapter` interface exists.
+
+### 9.1 Why this phase is fundamentally different from Phase 1
+
+- `react-native-ble-plx` (the BLE library) contains native code. **Expo Go can no longer run this app once it's added** — we need a custom "dev client" build instead (`expo-dev-client` + either a local build or an EAS cloud build).
+- Phase 1 could be fully built and verified blind, because everything was mock data and pure logic. Phase 2's core value — actually talking to an ELM327 — **cannot be fully verified without a physical dongle**, and cheap ELM327 clones are notorious for firmware quirks (slow responses, non-standard init behavior, dropped commands). I can build a correct implementation against the public, standard AT-command and SAE J1979 specs, but the last-mile "does it actually work with the batch of clone dongles" step needs your hardware and your feedback loop.
+
+### 9.2 Staged build order
+
+| Stage | What | Needs a dongle to verify? |
+|---|---|---|
+| 1. Dev client infrastructure | Add `expo-dev-client` + `react-native-ble-plx`; Android/iOS Bluetooth permissions in `app.json`; build a custom dev client | No |
+| 2. BLE scanning UI | "Connect" flow becomes: request permissions → scan → list nearby BLE devices → pick one → attempt connection. Handle Bluetooth-off, permission-denied, no-devices-found states | Partially — scanning can be verified against *any* nearby BLE device, just not ELM327-specific behavior |
+| 3. ELM327 protocol (`ElmObdAdapter`) | AT handshake (`ATZ`, `ATE0`, `ATL0`, `ATSP0`, …), Mode 01 PID requests for the live-data fields we already show (RPM, speed, coolant temp, battery, fuel level, intake air temp), Mode 03/04 for reading/clearing DTCs, response parsing per SAE J1979 formulas | **Yes** — real dongle required |
+| 4. Robustness / compatibility | Per-command timeouts + retries, friendly fallback messaging (spec's own requirement: "never crash"), notes on clone-specific quirks as they're discovered | **Yes**, ideally with more than one dongle/clone over time |
+
+### 9.3 A limitation worth setting expectations on now
+
+The original spec listed "auto-read mileage" from the dongle. Standard OBD-II (SAE J1979) **does not universally expose an odometer PID** — it's inconsistent across manufacturers and older cars often don't support it at all. Rather than silently under-deliver, Phase 2 will treat auto-odometer as best-effort: use it where the vehicle supports it, fall back to manual entry with a clear "not supported on this vehicle" message otherwise. Live data (RPM, speed, temps) and DTCs are standard and reliable across virtually all OBD-II vehicles (2001+ petrol, 2003+ diesel in the EU).
+
+### 9.4 Platform strategy
+
+- **Android first**, built locally via `npx expo run:android` using the Android Studio/SDK already on this machine — free, no account needed, and it's what we've already got a working emulator for.
+- **iOS deferred**: there's no Mac available here, so a local iOS dev-client build isn't possible. iOS would need an EAS cloud build plus an Apple Developer Program membership ($99/year) for device provisioning. Worth revisiting once Android is proven out.
+
+### 9.5 Open questions before starting
+
+1. Do you already have an ELM327 Bluetooth LE dongle, or is that still a future purchase? This determines whether Stages 3–4 can start now or need to wait.
+2. OK to defer iOS entirely until later (per 9.4)?
+3. Do you have an Expo (EAS) account already, or should we set one up when we get there?
