@@ -19,7 +19,7 @@ npx expo start
 
 Then press `i` (iOS simulator), `a` (Android emulator), or scan the QR code with Expo Go on your phone.
 
-> **Web is not supported.** `expo-sqlite`'s web backend needs `SharedArrayBuffer`, which browsers only expose when the page is served with `Cross-Origin-Opener-Policy`/`Cross-Origin-Embedder-Policy` headers — Expo's dev server doesn't set these by default. `npm run web` will boot but the app will crash on load with `SharedArrayBuffer is not defined`. This was verified directly, not assumed. Test on iOS/Android only; making web work would mean adding COOP/COEP middleware, which wasn't worth it for a mobile-only MVP.
+> **Web is not supported**, and `app.json` sets `web.output: "single"` specifically to avoid a Metro crash (`Worker chunk not found for .../expo-sqlite/web/worker.ts`) that `expo-sqlite`'s web build otherwise triggers on *every* `expo start` — not just `--web` — because Expo Router pre-renders a static web page by default. With `"single"`, that pre-render is skipped, so plain `npx expo start` runs clean for Expo Go/iOS/Android. If you do open the printed `http://localhost:.../` web URL in a browser, it'll still fail (`SharedArrayBuffer is not defined` — `expo-sqlite`'s web backend needs cross-origin-isolation headers Expo's dev server doesn't set). That's expected; just use Expo Go or a simulator.
 
 ## Running tests
 
