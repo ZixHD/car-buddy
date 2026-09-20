@@ -1,0 +1,402 @@
+[
+  {
+    "code": "P0100",
+    "severity": "soon",
+    "costMinEur": 40,
+    "costMaxEur": 180,
+    "en": { "name": "Mass Air Flow (MAF) circuit fault", "meaning": "The sensor that measures how much air is entering the engine is sending a signal the computer can't trust.", "ignoreConsequence": "Rough idle, poor acceleration and worse fuel economy are likely; on some cars it can eventually cause stalling." },
+    "sr": { "name": "Kvar senzora protoka vazduha (MAF)", "meaning": "Senzor koji meri koliko vazduha ulazi u motor šalje signal kojem računar ne veruje.", "ignoreConsequence": "Verovatan je nepravilan rad motora u leru, slabije ubrzanje i veća potrošnja goriva; na nekim vozilima može dovesti i do gašenja motora." }
+  },
+  {
+    "code": "P0102",
+    "severity": "soon",
+    "costMinEur": 40,
+    "costMaxEur": 160,
+    "en": { "name": "MAF circuit low input", "meaning": "The airflow sensor is reporting an implausibly low reading, often from a wiring or connector fault.", "ignoreConsequence": "Engine may run rich, hesitate, or lose power under load." },
+    "sr": { "name": "Nizak signal MAF senzora", "meaning": "Senzor protoka vazduha javlja neverovatno nisku vrednost, često zbog problema sa kablom ili konektorom.", "ignoreConsequence": "Motor može raditi 'bogato', trzati se ili gubiti snagu pod opterećenjem." }
+  },
+  {
+    "code": "P0103",
+    "severity": "soon",
+    "costMinEur": 40,
+    "costMaxEur": 160,
+    "en": { "name": "MAF circuit high input", "meaning": "The airflow sensor is reporting an implausibly high reading.", "ignoreConsequence": "Engine may run lean, surge, or idle roughly." },
+    "sr": { "name": "Visok signal MAF senzora", "meaning": "Senzor protoka vazduha javlja neverovatno visoku vrednost.", "ignoreConsequence": "Motor može raditi 'siromašno', trzati se ili nepravilno raditi u leru." }
+  },
+  {
+    "code": "P0106",
+    "severity": "soon",
+    "costMinEur": 40,
+    "costMaxEur": 160,
+    "en": { "name": "MAP/barometric pressure sensor fault", "meaning": "The sensor that reads intake manifold pressure is behaving inconsistently with expected values.", "ignoreConsequence": "Can cause poor fuel trim, rough idle, and reduced power." },
+    "sr": { "name": "Kvar MAP senzora (pritisak u usisnoj grani)", "meaning": "Senzor koji meri pritisak u usisnoj grani ponaša se drugačije nego što se očekuje.", "ignoreConsequence": "Može izazvati loše doziranje goriva, nepravilan rad u leru i smanjenu snagu." }
+  },
+  {
+    "code": "P0113",
+    "severity": "safe",
+    "costMinEur": 25,
+    "costMaxEur": 100,
+    "en": { "name": "Intake Air Temperature (IAT) sensor high input", "meaning": "The sensor that measures incoming air temperature is reading unusually high or has an open circuit.", "ignoreConsequence": "Minor effect on fuel mixture; usually not urgent but should be checked at the next service." },
+    "sr": { "name": "Visok signal senzora temperature usisnog vazduha (IAT)", "meaning": "Senzor koji meri temperaturu usisnog vazduha pokazuje neuobičajeno visoku vrednost ili ima prekid u kolu.", "ignoreConsequence": "Mali uticaj na smešu goriva; obično nije hitno, ali treba proveriti na sledećem servisu." }
+  },
+  {
+    "code": "P0117",
+    "severity": "soon",
+    "costMinEur": 30,
+    "costMaxEur": 120,
+    "en": { "name": "Engine Coolant Temperature (ECT) sensor low input", "meaning": "The coolant temperature sensor is reporting an implausibly low (cold) reading.", "ignoreConsequence": "The engine may run rich and use more fuel, and the cooling fan or gauge logic can misbehave." },
+    "sr": { "name": "Nizak signal senzora temperature rashladne tečnosti", "meaning": "Senzor temperature rashladne tečnosti prijavljuje neverovatno nisku (hladnu) vrednost.", "ignoreConsequence": "Motor može raditi 'bogato' i trošiti više goriva, a ventilator hladnjaka ili pokazivač temperature mogu raditi pogrešno." }
+  },
+  {
+    "code": "P0118",
+    "severity": "soon",
+    "costMinEur": 30,
+    "costMaxEur": 120,
+    "en": { "name": "Engine Coolant Temperature (ECT) sensor high input", "meaning": "The coolant temperature sensor is reporting an implausibly high (hot) reading.", "ignoreConsequence": "The car may go into a protective 'limp' mode, or you could lose an accurate overheating warning." },
+    "sr": { "name": "Visok signal senzora temperature rashladne tečnosti", "meaning": "Senzor temperature rashladne tečnosti prijavljuje neverovatno visoku (vrelu) vrednost.", "ignoreConsequence": "Vozilo može ući u zaštitni 'limp' režim, ili možete izgubiti tačno upozorenje o pregrevanju." }
+  },
+  {
+    "code": "P0121",
+    "severity": "soon",
+    "costMinEur": 40,
+    "costMaxEur": 150,
+    "en": { "name": "Throttle Position Sensor (TPS) range/performance", "meaning": "The sensor tracking how far the throttle is open isn't matching what the engine expects.", "ignoreConsequence": "Can cause hesitation, surging, or erratic idle; in some cases the car may enter limp mode." },
+    "sr": { "name": "Problem sa senzorom položaja leptira gasa (TPS)", "meaning": "Senzor koji prati koliko je otvoren leptir gasa ne odgovara onome što motor očekuje.", "ignoreConsequence": "Može izazvati trzanje, oscilacije brzine ili nepravilan rad u leru; u nekim slučajevima vozilo ulazi u 'limp' režim." }
+  },
+  {
+    "code": "P0128",
+    "severity": "safe",
+    "costMinEur": 30,
+    "costMaxEur": 100,
+    "en": { "name": "Coolant thermostat below regulating temperature", "meaning": "The engine is taking too long to warm up, usually because the thermostat is stuck open.", "ignoreConsequence": "Worse fuel economy and weaker cabin heat; not dangerous, but the thermostat is cheap and easy to fix." },
+    "sr": { "name": "Termostat ne dostiže radnu temperaturu", "meaning": "Motoru je potrebno predugo da se zagreje, obično zato što je termostat zaglavljen otvoren.", "ignoreConsequence": "Veća potrošnja goriva i slabije grejanje kabine; nije opasno, ali je termostat jeftin i lak za zamenu." }
+  },
+  {
+    "code": "P0171",
+    "severity": "soon",
+    "costMinEur": 30,
+    "costMaxEur": 250,
+    "en": { "name": "Fuel system too lean (Bank 1)", "meaning": "The engine is getting too much air or too little fuel on this side of the engine.", "ignoreConsequence": "Can cause hesitation and, over time, engine damage from running lean; often traced to a vacuum leak or fuel delivery issue." },
+    "sr": { "name": "Previše 'siromašna' smeša goriva (Bank 1)", "meaning": "Motor dobija previše vazduha ili premalo goriva na ovoj strani motora.", "ignoreConsequence": "Može izazvati trzanje, a dugoročno i oštećenje motora zbog rada na 'siromašnoj' smeši; često je uzrok curenje vakuuma ili problem u dovodu goriva." }
+  },
+  {
+    "code": "P0172",
+    "severity": "soon",
+    "costMinEur": 30,
+    "costMaxEur": 250,
+    "en": { "name": "Fuel system too rich (Bank 1)", "meaning": "The engine is getting too much fuel or too little air on this side of the engine.", "ignoreConsequence": "Wastes fuel, can foul spark plugs, and may damage the catalytic converter over time." },
+    "sr": { "name": "Previše 'bogata' smeša goriva (Bank 1)", "meaning": "Motor dobija previše goriva ili premalo vazduha na ovoj strani motora.", "ignoreConsequence": "Troši više goriva, može zaprljati svećice, a dugoročno oštetiti katalizator." }
+  },
+  {
+    "code": "P0174",
+    "severity": "soon",
+    "costMinEur": 30,
+    "costMaxEur": 250,
+    "en": { "name": "Fuel system too lean (Bank 2)", "meaning": "Same as the too-lean condition, but detected on the engine's other bank (V6/V8 engines).", "ignoreConsequence": "Can cause hesitation and, over time, engine damage from running lean." },
+    "sr": { "name": "Previše 'siromašna' smeša goriva (Bank 2)", "meaning": "Isto kao previše siromašna smeša, ali na drugoj strani motora (kod V6/V8 motora).", "ignoreConsequence": "Može izazvati trzanje, a dugoročno i oštećenje motora." }
+  },
+  {
+    "code": "P0175",
+    "severity": "soon",
+    "costMinEur": 30,
+    "costMaxEur": 250,
+    "en": { "name": "Fuel system too rich (Bank 2)", "meaning": "Same as the too-rich condition, but detected on the engine's other bank (V6/V8 engines).", "ignoreConsequence": "Wastes fuel and may damage the catalytic converter over time." },
+    "sr": { "name": "Previše 'bogata' smeša goriva (Bank 2)", "meaning": "Isto kao previše bogata smeša, ali na drugoj strani motora (kod V6/V8 motora).", "ignoreConsequence": "Troši više goriva i dugoročno može oštetiti katalizator." }
+  },
+  {
+    "code": "P0130",
+    "severity": "safe",
+    "costMinEur": 40,
+    "costMaxEur": 200,
+    "en": { "name": "Oxygen (O2) sensor circuit fault (Bank 1, Sensor 1)", "meaning": "The main oxygen sensor that helps tune the fuel mixture isn't giving a reliable signal.", "ignoreConsequence": "Fuel economy and emissions get worse over time; usually not an emergency." },
+    "sr": { "name": "Kvar lambda (O2) sonde (Bank 1, senzor 1)", "meaning": "Glavna lambda sonda koja pomaže u podešavanju smeše goriva ne šalje pouzdan signal.", "ignoreConsequence": "Potrošnja goriva i emisija se vremenom pogoršavaju; obično nije hitno." }
+  },
+  {
+    "code": "P0133",
+    "severity": "safe",
+    "costMinEur": 40,
+    "costMaxEur": 200,
+    "en": { "name": "O2 sensor slow response (Bank 1, Sensor 1)", "meaning": "The oxygen sensor is reacting too slowly to changes in the exhaust.", "ignoreConsequence": "Slightly worse fuel economy and emissions; the sensor is likely aging and worth replacing." },
+    "sr": { "name": "Spor odziv lambda sonde (Bank 1, senzor 1)", "meaning": "Lambda sonda presporo reaguje na promene u izduvnim gasovima.", "ignoreConsequence": "Blago lošija potrošnja goriva i emisija; sonda je verovatno istrošena i vredi je zameniti." }
+  },
+  {
+    "code": "P0135",
+    "severity": "safe",
+    "costMinEur": 40,
+    "costMaxEur": 180,
+    "en": { "name": "O2 sensor heater circuit fault (Bank 1, Sensor 1)", "meaning": "The small heater that warms the oxygen sensor up quickly isn't working correctly.", "ignoreConsequence": "The car takes longer to reach efficient fuel control after a cold start; not dangerous." },
+    "sr": { "name": "Kvar grejača lambda sonde (Bank 1, senzor 1)", "meaning": "Mali grejač koji brzo zagreva lambda sondu ne radi ispravno.", "ignoreConsequence": "Vozilu je potrebno više vremena da posle hladnog starta postigne efikasno doziranje goriva; nije opasno." }
+  },
+  {
+    "code": "P0141",
+    "severity": "safe",
+    "costMinEur": 40,
+    "costMaxEur": 180,
+    "en": { "name": "O2 sensor heater circuit fault (Bank 1, Sensor 2)", "meaning": "The heater on the downstream oxygen sensor (after the catalytic converter) isn't working correctly.", "ignoreConsequence": "Mostly an emissions concern; not dangerous to drive with." },
+    "sr": { "name": "Kvar grejača lambda sonde (Bank 1, senzor 2)", "meaning": "Grejač na lambda sondi iza katalizatora ne radi ispravno.", "ignoreConsequence": "Uglavnom utiče na emisiju; nije opasno za vožnju." }
+  },
+  {
+    "code": "P0300",
+    "severity": "stop",
+    "costMinEur": 40,
+    "costMaxEur": 400,
+    "en": { "name": "Random/multiple cylinder misfire", "meaning": "Several cylinders are misfiring, meaning fuel isn't burning properly and unburned fuel can reach the exhaust.", "ignoreConsequence": "Continued driving risks overheating and destroying the catalytic converter, and can cause real engine damage. If the check-engine light is flashing, stop driving as soon as it's safe." },
+    "sr": { "name": "Slučajni/višestruki prekidi paljenja", "meaning": "Više cilindara nepravilno pali gorivo, pa nesagorelo gorivo može dospeti u izduvni sistem.", "ignoreConsequence": "Dalja vožnja rizikuje pregrevanje i uništenje katalizatora, a može oštetiti i sam motor. Ako lampica motora treperi, stanite čim je bezbedno moguće." }
+  },
+  {
+    "code": "P0301",
+    "severity": "soon",
+    "costMinEur": 20,
+    "costMaxEur": 300,
+    "en": { "name": "Cylinder 1 misfire", "meaning": "Cylinder 1 isn't firing properly, which can be a spark plug, coil, or injector issue.", "ignoreConsequence": "Rough running and reduced power now; ignoring it risks catalytic converter damage over time." },
+    "sr": { "name": "Prekid paljenja u cilindru 1", "meaning": "Cilindar 1 nepravilno pali, što može biti problem sa svećicom, kalemom ili brizgaljkom.", "ignoreConsequence": "Trenutno nepravilan rad i smanjena snaga; ignorisanje dugoročno rizikuje oštećenje katalizatora." }
+  },
+  {
+    "code": "P0302",
+    "severity": "soon",
+    "costMinEur": 20,
+    "costMaxEur": 300,
+    "en": { "name": "Cylinder 2 misfire", "meaning": "Cylinder 2 isn't firing properly, which can be a spark plug, coil, or injector issue.", "ignoreConsequence": "Rough running and reduced power now; ignoring it risks catalytic converter damage over time." },
+    "sr": { "name": "Prekid paljenja u cilindru 2", "meaning": "Cilindar 2 nepravilno pali, što može biti problem sa svećicom, kalemom ili brizgaljkom.", "ignoreConsequence": "Trenutno nepravilan rad i smanjena snaga; ignorisanje dugoročno rizikuje oštećenje katalizatora." }
+  },
+  {
+    "code": "P0303",
+    "severity": "soon",
+    "costMinEur": 20,
+    "costMaxEur": 300,
+    "en": { "name": "Cylinder 3 misfire", "meaning": "Cylinder 3 isn't firing properly, which can be a spark plug, coil, or injector issue.", "ignoreConsequence": "Rough running and reduced power now; ignoring it risks catalytic converter damage over time." },
+    "sr": { "name": "Prekid paljenja u cilindru 3", "meaning": "Cilindar 3 nepravilno pali, što može biti problem sa svećicom, kalemom ili brizgaljkom.", "ignoreConsequence": "Trenutno nepravilan rad i smanjena snaga; ignorisanje dugoročno rizikuje oštećenje katalizatora." }
+  },
+  {
+    "code": "P0304",
+    "severity": "soon",
+    "costMinEur": 20,
+    "costMaxEur": 300,
+    "en": { "name": "Cylinder 4 misfire", "meaning": "Cylinder 4 isn't firing properly, which can be a spark plug, coil, or injector issue.", "ignoreConsequence": "Rough running and reduced power now; ignoring it risks catalytic converter damage over time." },
+    "sr": { "name": "Prekid paljenja u cilindru 4", "meaning": "Cilindar 4 nepravilno pali, što može biti problem sa svećicom, kalemom ili brizgaljkom.", "ignoreConsequence": "Trenutno nepravilan rad i smanjena snaga; ignorisanje dugoročno rizikuje oštećenje katalizatora." }
+  },
+  {
+    "code": "P0325",
+    "severity": "soon",
+    "costMinEur": 40,
+    "costMaxEur": 180,
+    "en": { "name": "Knock sensor circuit fault (Bank 1)", "meaning": "The sensor that listens for engine 'knock' (detonation) isn't reporting reliably.", "ignoreConsequence": "The engine computer may pull back timing to protect itself, costing you power and fuel economy; real knock left undetected can damage the engine." },
+    "sr": { "name": "Kvar senzora detonacije (Bank 1)", "meaning": "Senzor koji 'osluškuje' detonaciju u motoru ne javlja pouzdano.", "ignoreConsequence": "Računar motora može smanjiti paljenje radi zaštite, što košta snage i goriva; neotkrivena stvarna detonacija može oštetiti motor." }
+  },
+  {
+    "code": "P0335",
+    "severity": "soon",
+    "costMinEur": 50,
+    "costMaxEur": 200,
+    "en": { "name": "Crankshaft position sensor circuit fault", "meaning": "The sensor that tells the engine computer the crankshaft's position isn't giving a clean signal.", "ignoreConsequence": "Can cause stalling, hard starting, or the engine cutting out while driving without warning." },
+    "sr": { "name": "Kvar senzora položaja kolenastog vratila", "meaning": "Senzor koji računaru motora javlja položaj kolenastog vratila ne šalje čist signal.", "ignoreConsequence": "Može izazvati gašenje motora, otežano paljenje ili neočekivan prekid rada motora tokom vožnje." }
+  },
+  {
+    "code": "P0340",
+    "severity": "soon",
+    "costMinEur": 50,
+    "costMaxEur": 200,
+    "en": { "name": "Camshaft position sensor circuit fault", "meaning": "The sensor that tracks camshaft position isn't giving a clean signal.", "ignoreConsequence": "Can cause hard starting, stalling, or rough running." },
+    "sr": { "name": "Kvar senzora položaja bregaste osovine", "meaning": "Senzor koji prati položaj bregaste osovine ne šalje čist signal.", "ignoreConsequence": "Može izazvati otežano paljenje, gašenje motora ili nepravilan rad." }
+  },
+  {
+    "code": "P0351",
+    "severity": "soon",
+    "costMinEur": 30,
+    "costMaxEur": 220,
+    "en": { "name": "Ignition coil A circuit fault", "meaning": "The primary or secondary ignition coil circuit for one cylinder isn't working correctly.", "ignoreConsequence": "Causes a misfire on that cylinder; prolonged driving risks catalytic converter damage." },
+    "sr": { "name": "Kvar kalema paljenja A", "meaning": "Primarno ili sekundarno kolo kalema paljenja za jedan cilindar ne radi ispravno.", "ignoreConsequence": "Izaziva prekid paljenja u tom cilindru; duža vožnja rizikuje oštećenje katalizatora." }
+  },
+  {
+    "code": "P0352",
+    "severity": "soon",
+    "costMinEur": 30,
+    "costMaxEur": 220,
+    "en": { "name": "Ignition coil B circuit fault", "meaning": "The primary or secondary ignition coil circuit for another cylinder isn't working correctly.", "ignoreConsequence": "Causes a misfire on that cylinder; prolonged driving risks catalytic converter damage." },
+    "sr": { "name": "Kvar kalema paljenja B", "meaning": "Primarno ili sekundarno kolo kalema paljenja za drugi cilindar ne radi ispravno.", "ignoreConsequence": "Izaziva prekid paljenja u tom cilindru; duža vožnja rizikuje oštećenje katalizatora." }
+  },
+  {
+    "code": "P0201",
+    "severity": "soon",
+    "costMinEur": 40,
+    "costMaxEur": 280,
+    "en": { "name": "Fuel injector circuit fault (Cylinder 1)", "meaning": "The electrical circuit controlling the fuel injector for cylinder 1 has a fault.", "ignoreConsequence": "Causes a misfire on that cylinder, rough idle, and reduced power." },
+    "sr": { "name": "Kvar strujnog kola brizgaljke (cilindar 1)", "meaning": "Električno kolo koje upravlja brizgaljkom za cilindar 1 ima kvar.", "ignoreConsequence": "Izaziva prekid paljenja u tom cilindru, nepravilan rad u leru i smanjenu snagu." }
+  },
+  {
+    "code": "P0230",
+    "severity": "soon",
+    "costMinEur": 100,
+    "costMaxEur": 450,
+    "en": { "name": "Fuel pump primary circuit fault", "meaning": "The electrical circuit that controls the fuel pump has a fault.", "ignoreConsequence": "Can cause the engine to lose power, stall, or fail to start at all, sometimes without warning." },
+    "sr": { "name": "Kvar strujnog kola pumpe za gorivo", "meaning": "Električno kolo koje upravlja pumpom za gorivo ima kvar.", "ignoreConsequence": "Može izazvati gubitak snage, gašenje motora ili potpuni izostanak paljenja, ponekad bez upozorenja." }
+  },
+  {
+    "code": "P0087",
+    "severity": "soon",
+    "costMinEur": 80,
+    "costMaxEur": 400,
+    "en": { "name": "Fuel rail pressure too low", "meaning": "Fuel pressure in the rail feeding the injectors is lower than the engine needs.", "ignoreConsequence": "Causes misfires and power loss under load, and can leave you stranded if it worsens." },
+    "sr": { "name": "Prenizak pritisak goriva u razvodnoj rampi", "meaning": "Pritisak goriva u rampi koja napaja brizgaljke je niži nego što je motoru potrebno.", "ignoreConsequence": "Izaziva prekide paljenja i gubitak snage pod opterećenjem, a ako se pogorša može vas ostaviti na putu." }
+  },
+  {
+    "code": "P0401",
+    "severity": "soon",
+    "costMinEur": 30,
+    "costMaxEur": 200,
+    "en": { "name": "EGR flow insufficient", "meaning": "Not enough exhaust gas is being recirculated back into the intake, usually due to a clogged EGR valve or passage.", "ignoreConsequence": "Can cause engine knock/pinging and higher combustion temperatures over time." },
+    "sr": { "name": "Nedovoljan protok EGR ventila", "meaning": "Nedovoljno izduvnih gasova se vraća u usisni sistem, obično zbog začepljenog EGR ventila ili kanala.", "ignoreConsequence": "Vremenom može izazvati lupanje motora i povišene temperature sagorevanja." }
+  },
+  {
+    "code": "P0402",
+    "severity": "soon",
+    "costMinEur": 30,
+    "costMaxEur": 200,
+    "en": { "name": "EGR flow excessive", "meaning": "Too much exhaust gas is being recirculated, usually from a stuck-open EGR valve.", "ignoreConsequence": "Can cause rough idle, stalling, and reduced power." },
+    "sr": { "name": "Prekomeran protok EGR ventila", "meaning": "Previše izduvnih gasova se vraća u usisni sistem, obično zbog EGR ventila zaglavljenog u otvorenom položaju.", "ignoreConsequence": "Može izazvati nepravilan rad u leru, gašenje motora i smanjenu snagu." }
+  },
+  {
+    "code": "P0420",
+    "severity": "soon",
+    "costMinEur": 60,
+    "costMaxEur": 900,
+    "en": { "name": "Catalytic converter efficiency below threshold (Bank 1)", "meaning": "The catalytic converter isn't cleaning the exhaust as well as it should.", "ignoreConsequence": "You'll likely fail an emissions/technical inspection. Often the real cause is an aging O2 sensor or a misfire upstream, not the converter itself — worth diagnosing before replacing the (expensive) converter." },
+    "sr": { "name": "Efikasnost katalizatora ispod praga (Bank 1)", "meaning": "Katalizator ne čisti izduvne gasove onako kako bi trebalo.", "ignoreConsequence": "Verovatno nećete proći tehnički pregled/emisiju. Stvarni uzrok je često istrošena lambda sonda ili prekid paljenja pre katalizatora, a ne sam katalizator — vredi to proveriti pre skupe zamene katalizatora." }
+  },
+  {
+    "code": "P0430",
+    "severity": "soon",
+    "costMinEur": 60,
+    "costMaxEur": 900,
+    "en": { "name": "Catalytic converter efficiency below threshold (Bank 2)", "meaning": "Same as P0420 but on the engine's other bank (V6/V8 engines).", "ignoreConsequence": "You'll likely fail an emissions/technical inspection; get the upstream cause checked before replacing the converter." },
+    "sr": { "name": "Efikasnost katalizatora ispod praga (Bank 2)", "meaning": "Isto kao P0420, ali na drugoj strani motora (kod V6/V8 motora).", "ignoreConsequence": "Verovatno nećete proći tehnički pregled/emisiju; proverite uzrok pre skupe zamene katalizatora." }
+  },
+  {
+    "code": "P0440",
+    "severity": "safe",
+    "costMinEur": 15,
+    "costMaxEur": 200,
+    "en": { "name": "Evaporative emission (EVAP) system fault", "meaning": "The system that captures fuel vapor from the tank has a general fault, often a loose or bad gas cap.", "ignoreConsequence": "No effect on drivability; mainly an emissions/inspection issue. Check the fuel cap first." },
+    "sr": { "name": "Kvar sistema za isparenja goriva (EVAP)", "meaning": "Sistem koji hvata isparenja goriva iz rezervoara ima opšti kvar, često zbog labavog ili neispravnog čepa rezervoara.", "ignoreConsequence": "Ne utiče na vožnju; uglavnom pitanje emisije/tehničkog pregleda. Prvo proverite čep rezervoara." }
+  },
+  {
+    "code": "P0442",
+    "severity": "safe",
+    "costMinEur": 15,
+    "costMaxEur": 180,
+    "en": { "name": "EVAP system small leak detected", "meaning": "A small leak was found in the fuel vapor system, very often just the gas cap.", "ignoreConsequence": "No drivability impact; you may fail an emissions/inspection check until it's fixed." },
+    "sr": { "name": "Otkriveno malo curenje u EVAP sistemu", "meaning": "Pronađeno je malo curenje u sistemu za isparenja goriva, vrlo često samo čep rezervoara.", "ignoreConsequence": "Ne utiče na vožnju; možete pasti na tehničkom pregledu/emisiji dok se ne popravi." }
+  },
+  {
+    "code": "P0446",
+    "severity": "safe",
+    "costMinEur": 30,
+    "costMaxEur": 180,
+    "en": { "name": "EVAP vent control circuit fault", "meaning": "The valve that vents the fuel vapor system to fresh air isn't working correctly.", "ignoreConsequence": "No drivability impact; mainly an emissions/inspection issue." },
+    "sr": { "name": "Kvar ventilacionog ventila EVAP sistema", "meaning": "Ventil koji provetrava sistem za isparenja goriva ne radi ispravno.", "ignoreConsequence": "Ne utiče na vožnju; uglavnom pitanje emisije/tehničkog pregleda." }
+  },
+  {
+    "code": "P0455",
+    "severity": "safe",
+    "costMinEur": 20,
+    "costMaxEur": 300,
+    "en": { "name": "EVAP system large leak detected", "meaning": "A significant leak was found in the fuel vapor system — check for a loose, missing, or cracked gas cap first.", "ignoreConsequence": "No drivability impact; you'll likely fail an emissions/inspection check and may smell fuel vapor near the tank." },
+    "sr": { "name": "Otkriveno veliko curenje u EVAP sistemu", "meaning": "Pronađeno je značajno curenje u sistemu za isparenja goriva — prvo proverite da li čep rezervoara labavi, nedostaje ili je napukao.", "ignoreConsequence": "Ne utiče na vožnju; verovatno nećete proći tehnički pregled/emisiju, a možete osetiti miris goriva blizu rezervoara." }
+  },
+  {
+    "code": "P0500",
+    "severity": "soon",
+    "costMinEur": 30,
+    "costMaxEur": 150,
+    "en": { "name": "Vehicle speed sensor malfunction", "meaning": "The sensor that tells the car how fast it's going isn't reporting correctly.", "ignoreConsequence": "Can affect the speedometer, cruise control, ABS, and automatic transmission shifting." },
+    "sr": { "name": "Kvar senzora brzine vozila", "meaning": "Senzor koji javlja koliko brzo se vozilo kreće ne radi ispravno.", "ignoreConsequence": "Može uticati na brzinomer, tempomat, ABS i menjanje brzina kod automatskog menjača." }
+  },
+  {
+    "code": "P0505",
+    "severity": "safe",
+    "costMinEur": 30,
+    "costMaxEur": 150,
+    "en": { "name": "Idle control system malfunction", "meaning": "The system that controls engine idle speed isn't behaving as expected, often due to a dirty throttle body.", "ignoreConsequence": "May idle too high, too low, or stall at stops; annoying but rarely dangerous." },
+    "sr": { "name": "Kvar sistema za kontrolu praznog hoda", "meaning": "Sistem koji kontroliše broj obrtaja u leru ne radi kako treba, često zbog prljavog tela leptira gasa.", "ignoreConsequence": "Motor može raditi na previsokom ili preniskom leru, ili se gasiti na semaforu; neprijatno, ali retko opasno." }
+  },
+  {
+    "code": "P0506",
+    "severity": "safe",
+    "costMinEur": 30,
+    "costMaxEur": 150,
+    "en": { "name": "Idle control system RPM lower than expected", "meaning": "The engine is idling slower than the computer expects.", "ignoreConsequence": "May stall at stops, especially with AC or electrical loads on; usually a cleaning or minor repair fixes it." },
+    "sr": { "name": "Broj obrtaja u leru niži od očekivanog", "meaning": "Motor radi u leru sporije nego što računar očekuje.", "ignoreConsequence": "Motor se može gasiti na semaforu, posebno uz uključenu klimu ili druge trošače; obično se rešava čišćenjem ili manjom popravkom." }
+  },
+  {
+    "code": "P0507",
+    "severity": "safe",
+    "costMinEur": 30,
+    "costMaxEur": 150,
+    "en": { "name": "Idle control system RPM higher than expected", "meaning": "The engine is idling faster than the computer expects, often from a vacuum leak.", "ignoreConsequence": "Higher fuel use at idle; not dangerous, but worth fixing." },
+    "sr": { "name": "Broj obrtaja u leru viši od očekivanog", "meaning": "Motor radi u leru brže nego što računar očekuje, često zbog curenja vakuuma.", "ignoreConsequence": "Veća potrošnja goriva u leru; nije opasno, ali vredi popraviti." }
+  },
+  {
+    "code": "P0520",
+    "severity": "stop",
+    "costMinEur": 30,
+    "costMaxEur": 150,
+    "en": { "name": "Engine oil pressure sensor/switch circuit fault", "meaning": "The circuit for the sensor that monitors oil pressure isn't reading correctly — this can mean a faulty sensor, or it can mean genuinely low oil pressure.", "ignoreConsequence": "If oil pressure is actually low, continuing to drive can destroy the engine within minutes. Check your oil level immediately and don't keep driving if the oil warning light is also on." },
+    "sr": { "name": "Kvar senzora/prekidača pritiska ulja u motoru", "meaning": "Kolo senzora koji prati pritisak ulja ne očitava ispravno — ovo može biti kvar senzora, ali može značiti i stvarno nizak pritisak ulja.", "ignoreConsequence": "Ako je pritisak ulja zaista nizak, dalja vožnja može uništiti motor za nekoliko minuta. Odmah proverite nivo ulja i ne nastavljajte vožnju ako svetli i lampica za pritisak ulja." }
+  },
+  {
+    "code": "P0562",
+    "severity": "soon",
+    "costMinEur": 60,
+    "costMaxEur": 350,
+    "en": { "name": "System voltage low", "meaning": "The electrical system is running at a lower voltage than it should, often a weak battery, bad connection, or failing alternator.", "ignoreConsequence": "Electrical accessories may misbehave, and the car can eventually fail to start or stall while driving." },
+    "sr": { "name": "Nizak napon u električnom sistemu", "meaning": "Električni sistem radi na nižem naponu nego što treba, često zbog slabog akumulatora, lošeg kontakta ili alternatora koji otkazuje.", "ignoreConsequence": "Električni uređaji mogu raditi nepravilno, a vozilo na kraju može odbiti da upali ili se ugasiti tokom vožnje." }
+  },
+  {
+    "code": "P0563",
+    "severity": "soon",
+    "costMinEur": 80,
+    "costMaxEur": 350,
+    "en": { "name": "System voltage high", "meaning": "The electrical system is running at a higher voltage than it should, usually an overcharging alternator.", "ignoreConsequence": "Can shorten battery life and damage sensitive electronics over time." },
+    "sr": { "name": "Visok napon u električnom sistemu", "meaning": "Električni sistem radi na višem naponu nego što treba, obično zbog alternatora koji prekomerno puni.", "ignoreConsequence": "Može skratiti vek akumulatora i vremenom oštetiti osetljivu elektroniku." }
+  },
+  {
+    "code": "P0600",
+    "severity": "soon",
+    "costMinEur": 60,
+    "costMaxEur": 400,
+    "en": { "name": "Serial communication link malfunction", "meaning": "The engine computer is having trouble communicating with other modules on the car's internal network.", "ignoreConsequence": "Can cause warning lights, disabled features, or erratic behavior across multiple systems." },
+    "sr": { "name": "Kvar u komunikaciji između kompjutera vozila", "meaning": "Računar motora ima problem u komunikaciji sa drugim modulima na internoj mreži vozila.", "ignoreConsequence": "Može izazvati kontrolne lampice, onemogućene funkcije ili nepredvidivo ponašanje više sistema." }
+  },
+  {
+    "code": "P0601",
+    "severity": "soon",
+    "costMinEur": 100,
+    "costMaxEur": 400,
+    "en": { "name": "Internal control module memory checksum error", "meaning": "The engine computer detected an internal memory error.", "ignoreConsequence": "Can cause erratic engine behavior; may eventually require reprogramming or replacing the module." },
+    "sr": { "name": "Greška u internoj memoriji kompjutera motora", "meaning": "Računar motora je otkrio grešku u sopstvenoj memoriji.", "ignoreConsequence": "Može izazvati nepredvidivo ponašanje motora; na kraju može biti potrebno reprogramiranje ili zamena modula." }
+  },
+  {
+    "code": "P0700",
+    "severity": "soon",
+    "costMinEur": 50,
+    "costMaxEur": 500,
+    "en": { "name": "Transmission control system malfunction", "meaning": "The transmission computer has detected a fault and asked the engine light to turn on; the real fault code lives in the transmission module.", "ignoreConsequence": "Left unaddressed, the underlying transmission issue can worsen and become far more expensive to repair." },
+    "sr": { "name": "Kvar u sistemu upravljanja menjačem", "meaning": "Računar menjača je otkrio kvar i zatražio paljenje kontrolne lampice motora; stvarni kod kvara se nalazi u modulu menjača.", "ignoreConsequence": "Ako se zanemari, osnovni problem sa menjačem se može pogoršati i postati mnogo skuplji za popravku." }
+  },
+  {
+    "code": "P0730",
+    "severity": "soon",
+    "costMinEur": 100,
+    "costMaxEur": 700,
+    "en": { "name": "Incorrect gear ratio detected", "meaning": "The transmission isn't achieving the gear ratio the computer commanded, which can indicate low fluid, a worn clutch pack, or a solenoid fault.", "ignoreConsequence": "Driving aggressively while this is active risks accelerating wear and turning a moderate repair into a full transmission rebuild." },
+    "sr": { "name": "Otkriven pogrešan prenosni odnos", "meaning": "Menjač ne postiže prenosni odnos koji računar zahteva, što može ukazivati na nizak nivo ulja, istrošene lamele ili kvar solenoida.", "ignoreConsequence": "Agresivna vožnja dok je ovo aktivno rizikuje ubrzano habanje i pretvaranje umerene popravke u kompletnu remont menjača." }
+  },
+  {
+    "code": "P0740",
+    "severity": "soon",
+    "costMinEur": 80,
+    "costMaxEur": 500,
+    "en": { "name": "Torque converter clutch circuit malfunction", "meaning": "The lock-up clutch inside the automatic transmission's torque converter isn't engaging correctly.", "ignoreConsequence": "Can cause shuddering, poor fuel economy, and increased transmission fluid temperature; worth fixing before it damages the converter." },
+    "sr": { "name": "Kvar spojnice konvertora obrtnog momenta", "meaning": "Blokirna spojnica unutar konvertora obrtnog momenta automatskog menjača ne uklapa se ispravno.", "ignoreConsequence": "Može izazvati podrhtavanje, lošiju potrošnju goriva i povišenu temperaturu ulja u menjaču; vredi popraviti pre nego što ošteti konvertor." }
+  }
+]
