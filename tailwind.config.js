@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  // 'class' avoids a react-native-css-interop web crash ("Cannot manually set
+  // color scheme, as dark mode is type 'media'") — NativeWind still syncs the
+  // class to the OS/browser color-scheme preference automatically in this mode.
+  darkMode: 'class',
   presets: [require('nativewind/preset')],
   theme: {
     extend: {
