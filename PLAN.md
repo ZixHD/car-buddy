@@ -165,12 +165,12 @@ All 7 milestones shipped, tested (16 passing unit tests), and verified running l
 
 ### 9.2 Staged build order
 
-| Stage | What | Needs a dongle to verify? |
-|---|---|---|
-| 1. Dev client infrastructure | Add `expo-dev-client` + `react-native-ble-plx`; Android/iOS Bluetooth permissions in `app.json`; build a custom dev client | No |
-| 2. BLE scanning UI | "Connect" flow becomes: request permissions → scan → list nearby BLE devices → pick one → attempt connection. Handle Bluetooth-off, permission-denied, no-devices-found states | Partially — scanning can be verified against *any* nearby BLE device, just not ELM327-specific behavior |
-| 3. ELM327 protocol (`ElmObdAdapter`) | AT handshake (`ATZ`, `ATE0`, `ATL0`, `ATSP0`, …), Mode 01 PID requests for the live-data fields we already show (RPM, speed, coolant temp, battery, fuel level, intake air temp), Mode 03/04 for reading/clearing DTCs, response parsing per SAE J1979 formulas | **Yes** — real dongle required |
-| 4. Robustness / compatibility | Per-command timeouts + retries, friendly fallback messaging (spec's own requirement: "never crash"), notes on clone-specific quirks as they're discovered | **Yes**, ideally with more than one dongle/clone over time |
+| Stage | What | Needs a dongle to verify? | Status |
+|---|---|---|---|
+| 1. Dev client infrastructure | Add `expo-dev-client` + `react-native-ble-plx`; Android/iOS Bluetooth permissions in `app.json`; build a custom dev client | No | ✅ Done — built and installed locally via `npx expo run:android`, boots correctly on the Android emulator |
+| 2. BLE scanning UI | "Connect" flow becomes: request permissions → scan → list nearby BLE devices → pick one → attempt connection. Handle Bluetooth-off, permission-denied, no-devices-found states | Partially — scanning can be verified against *any* nearby BLE device, just not ELM327-specific behavior | ✅ Done — `src/app/ble-scan.tsx` + `useBleScanner` hook. Verified live: real Android permission dialog appeared (Bluetooth-only, no location prompt, confirming `neverForLocation` worked), correctly detected Bluetooth-off on the emulator and showed the intended fallback message. Linked from Settings, not yet wired into Diagnostics (deliberately — see 9.1) |
+| 3. ELM327 protocol (`ElmObdAdapter`) | AT handshake (`ATZ`, `ATE0`, `ATL0`, `ATSP0`, …), Mode 01 PID requests for the live-data fields we already show (RPM, speed, coolant temp, battery, fuel level, intake air temp), Mode 03/04 for reading/clearing DTCs, response parsing per SAE J1979 formulas | **Yes** — real dongle required | ⏳ Blocked on you getting a dongle |
+| 4. Robustness / compatibility | Per-command timeouts + retries, friendly fallback messaging (spec's own requirement: "never crash"), notes on clone-specific quirks as they're discovered | **Yes**, ideally with more than one dongle/clone over time | ⏳ Blocked on you getting a dongle |
 
 ### 9.3 A limitation worth setting expectations on now
 
@@ -181,8 +181,12 @@ The original spec listed "auto-read mileage" from the dongle. Standard OBD-II (S
 - **Android first**, built locally via `npx expo run:android` using the Android Studio/SDK already on this machine — free, no account needed, and it's what we've already got a working emulator for.
 - **iOS deferred**: there's no Mac available here, so a local iOS dev-client build isn't possible. iOS would need an EAS cloud build plus an Apple Developer Program membership ($99/year) for device provisioning. Worth revisiting once Android is proven out.
 
-### 9.5 Open questions before starting
+### 9.5 Decisions made (as of 2026-09-23)
 
-1. Do you already have an ELM327 Bluetooth LE dongle, or is that still a future purchase? This determines whether Stages 3–4 can start now or need to wait.
-2. OK to defer iOS entirely until later (per 9.4)?
-3. Do you have an Expo (EAS) account already, or should we set one up when we get there?
+1. No ELM327 dongle yet — Stages 3–4 wait until one's bought.
+2. Android first confirmed; iOS deferred.
+3. No EAS account — not needed yet since the dev client was built locally (`npx expo run:android`, no cloud build, no account). Will only need one for an eventual iOS cloud build or distributing beyond this machine.
+
+### 9.6 Next step
+
+Buy an ELM327 BLE dongle to unblock Stage 3. In the meantime nothing else is planned here — Stages 1–2 are complete and there's little value in speculatively building more BLE plumbing without hardware to build it against.
