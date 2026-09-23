@@ -1,4 +1,5 @@
 import Constants from 'expo-constants';
+import { router } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { Alert, Text, View } from 'react-native';
 import { useQueryClient } from '@tanstack/react-query';
@@ -81,6 +82,12 @@ export default function SettingsScreen() {
           {t('settings.version', { version: Constants.expoConfig?.version ?? '1.0.0' })}
         </Text>
       </Card>
+
+      <Button
+        label={t('settings.bleScannerLink')}
+        variant="secondary"
+        onPress={() => router.push('/ble-scan')}
+      />
 
       <Button label={t('settings.resetAllData')} variant="destructive" onPress={confirmReset} />
     </ScreenContainer>

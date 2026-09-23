@@ -34,6 +34,7 @@ export default function RootLayout() {
               <Stack.Screen name="vehicle/[id]/service/new" options={{ presentation: 'modal' }} />
               <Stack.Screen name="vehicle/[id]/interval/new" options={{ presentation: 'modal' }} />
               <Stack.Screen name="vehicle/[id]/interval/[intervalId]" options={{ presentation: 'modal' }} />
+              <Stack.Screen name="ble-scan" options={{ presentation: 'modal' }} />
             </Stack>
           </ThemeProvider>
         </QueryClientProvider>

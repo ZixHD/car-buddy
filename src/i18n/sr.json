@@ -184,6 +184,20 @@
     "version": "Verzija {{version}}",
     "resetAllData": "Obriši sve podatke",
     "resetConfirmTitle": "Obrisati sve?",
-    "resetConfirmBody": "Ovo trajno briše svako vozilo, očitavanje, podsetnik i servisnu stavku na ovom uređaju. Ovo se ne može poništiti."
+    "resetConfirmBody": "Ovo trajno briše svako vozilo, očitavanje, podsetnik i servisnu stavku na ovom uređaju. Ovo se ne može poništiti.",
+    "bleScannerLink": "Bluetooth skener (test za Fazu 2)"
+  },
+  "bleScan": {
+    "title": "Bluetooth skener",
+    "intro": "Ovo je test ekran za Fazu 2 — dokazuje da Bluetooth dozvole i pretraga uređaja rade na ovom telefonu. Još uvek nije povezano sa Dijagnostikom; to dolazi kada bude dostupan pravi ELM327 uređaj za izgradnju protokola.",
+    "scan": "Pretraži uređaje",
+    "scanning": "Pretraga…",
+    "stop": "Zaustavi",
+    "permissionDenied": "Bluetooth dozvola je odbijena. Omogućite je u Podešavanja → Aplikacije → Car Buddy → Dozvole.",
+    "bluetoothOff": "Bluetooth je isključen. Uključite ga i pokušajte ponovo.",
+    "noDevices": "Još uvek nema pronađenih uređaja u blizini.",
+    "deviceCount": "{{count}} pronađen uređaj",
+    "deviceCount_other": "{{count}} pronađenih uređaja",
+    "signal": "Signal: {{value}} dBm"
   }
 }
